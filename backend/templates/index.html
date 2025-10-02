@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Resume Shortlisting</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background: #f5f5f5; }
+        h1 { color: #333; }
+        textarea { width: 100%; height: 100px; }
+        input[type="file"] { margin: 10px 0; }
+        button { padding: 10px 20px; cursor: pointer; background: #007bff; color: #fff; border: none; border-radius: 5px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; background: #fff; }
+        th, td { border: 1px solid #ccc; padding: 10px; text-align: left; }
+        th { background: #eee; }
+        .keywords { color: #007bff; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>Resume Shortlisting</h1>
+
+    <form id="resumeForm">
+        <label>Job Description:</label><br>
+        <textarea name="job_description" required placeholder="Paste job description here..."></textarea><br>
+
+        <label>Upload Resumes (PDF/DOCX/TXT):</label><br>
+        <input type="file" name="resumes" multiple required><br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <div id="results"></div>
+
+    <script>
+        const form = document.getElementById('resumeForm');
+        const resultsDiv = document.getElementById('results');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            resultsDiv.innerHTML = "Processing...";
+
+            const formData = new FormData(form);
+
+            try {
+                const response = await fetch('/rank', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const data = await response.json();
+
+                if (data.error) {
+                    resultsDiv.innerHTML = `<p style="color:red;">${data.error}</p>`;
+                    return;
+                }
+
+                if (data.length === 0) {
+                    resultsDiv.innerHTML = "<p>No resumes matched.</p>";
+                    return;
+                }
+
+                // Build table
+                let html = `<table>
+                    <tr>
+                        <th>Filename</th>
+                        <th>Score</th>
+                        <th>Matching Keywords</th>
+                    </tr>`;
+
+                data.forEach(item => {
+                    html += `<tr>
+                        <td>${item.filename}</td>
+                        <td>${(item.score * 100).toFixed(1)}%</td>
+                        <td class="keywords">${item.matching_keywords.join(', ') || '-'}</td>
+                    </tr>`;
+                });
+
+                html += `</table>`;
+                resultsDiv.innerHTML = html;
+
+            } catch (err) {
+                resultsDiv.innerHTML = `<p style="color:red;">Error: ${err.message}</p>`;
+            }
+        });
+    </script>
+</body>
+</html>
