@@ -1,0 +1,33 @@
+Sunita Sharma
+Bengaluru, Karnataka | +91 87654 32100 | sunita.sharma@email.com
+
+Professional Profile
+A detail-oriented Quality Assurance Engineer with 3 years of experience in manual and automated testing for web applications. I am skilled in creating test plans, executing test cases, and identifying bugs to ensure a high-quality product. I am proficient with bug tracking tools like Jira and have a foundational understanding of web technologies.
+
+Experience
+QA Engineer | TestCo | Bengaluru, India
+August 2020 - Present
+
+Performed manual testing for a large-scale e-commerce web application across different browsers and devices.
+
+Wrote and executed detailed test cases to verify application functionality against requirements.
+
+Identified, documented, and tracked defects using Jira, collaborating closely with the development team to ensure timely resolution.
+
+Participated in daily stand-up meetings as part of an agile team.
+
+Gained experience with version control using Git to manage test scripts.
+
+Education
+BCA (Bachelor of Computer Applications) | Christ University, Bengaluru
+2017 - 2020
+
+Technical Competencies
+
+Testing Tools: Selenium WebDriver, Jira, Postman (for basic API checks)
+
+Web Technologies: Basic HTML, CSS, JavaScript
+
+Databases: Basic SQL query knowledge for data verification
+
+Other: Git, Agile Methodologies, Test Case Design

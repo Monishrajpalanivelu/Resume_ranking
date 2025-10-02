@@ -1,0 +1,40 @@
+Amit Kumar
+Hyderabad, Telangana | +91 91234 56780 | amit.kumar@email.com | https://www.google.com/search?q=linkedin.com/in/amitkumar
+
+Career Objective
+An experienced back-end focused Software Developer with over 5 years of expertise in building scalable, data-driven applications. My primary experience lies in the Python/Django ecosystem, but I have also successfully developed and delivered front-end projects using React.js. I am adept at working with relational databases, containerization with Docker, and designing RESTful APIs. I am looking to apply my broad software engineering skills to a new and challenging environment.
+
+Work History
+Senior Software Developer | Healthify | Hyderabad, India
+May 2020 - Present
+
+Architected and led the development of a patient management system's back-end using Python and Django REST Framework.
+
+Developed a separate analytics dashboard front-end using React.js to visualize patient data, which helped clinicians make faster decisions.
+
+Optimized application performance by integrating a Redis caching layer, which cut down API response times by half.
+
+Managed the PostgreSQL database schema and migrations.
+
+Championed the adoption of Docker for creating reproducible build and deployment pipelines. Used Git for all version control.
+
+Web Developer | Digital Leap | Hyderabad, India
+April 2018 - May 2020
+
+Developed and maintained e-commerce websites using Python and Django.
+
+Handled both server-side logic and front-end scripting with JavaScript.
+
+Education
+B.Tech in Information Technology | IIIT Hyderabad
+2014 - 2018
+
+Skills Profile
+
+Languages: Python, JavaScript, SQL
+
+Frameworks: Django, Django REST Framework, React.js
+
+Databases: PostgreSQL, MongoDB, Redis
+
+Tools: Docker, Git, PyCharm, CI/CD

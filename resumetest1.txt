@@ -1,0 +1,42 @@
+Priya Singh
+Bengaluru, Karnataka | +91 98765 43211 | priya.singh.dev@email.com | https://www.google.com/search?q=linkedin.com/in/priyasinghdev
+
+Professional Summary
+A skilled and motivated Full-Stack Developer with 4 years of hands-on experience in designing, developing, and deploying scalable web applications. I specialize in the Java and Spring Boot ecosystem for robust back-end services and utilize React.js for creating responsive, user-friendly front-end interfaces. I am passionate about writing clean, maintainable code and leveraging tools like Docker and Git to streamline the development lifecycle.
+
+Professional Experience
+Software Engineer | FinTech Solutions Pvt. Ltd. | Bengaluru, India
+July 2021 - Present
+
+Designed and developed a suite of high-performance REST APIs using Java and Spring Boot for a new loan processing platform, which now handles over 10,000 requests per minute.
+
+Built the complete front-end user interface for the platform's dashboard from scratch using React.js, improving user workflow efficiency by 25%.
+
+Managed and interacted with a PostgreSQL database, writing optimized SQL queries and ensuring data integrity for all financial transactions.
+
+Containerized the application using Docker, creating a consistent environment for development, testing, and production, which reduced deployment failures by 40%.
+
+Actively participated in an agile team, using Git for version control and collaborating with product managers to translate requirements into technical specifications.
+
+Junior Java Developer | Acmesoft | Bengaluru, India
+June 2019 - June 2021
+
+Assisted in the maintenance and development of a monolithic Java-based enterprise application.
+
+Contributed to debugging and troubleshooting issues across the technology stack.
+
+Gained foundational experience in RESTful API design principles.
+
+Education
+B.E. in Computer Science | PES University, Bengaluru
+2015 - 2019
+
+Technical Skills
+
+Languages: Java, JavaScript, SQL, HTML5, CSS3
+
+Frameworks: Spring Boot, React.js, Hibernate
+
+Databases: PostgreSQL, MySQL, Redis
+
+Tools: Docker, Git, Maven, Jenkins, Postman

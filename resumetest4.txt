@@ -1,0 +1,27 @@
+Rohan Desai
+Mumbai, Maharashtra | +91 76543 21098 | rohan.desai@email.com
+
+Career Profile
+A detail-oriented Data Analyst with 3 years of experience in data extraction, analysis, and visualization. Proficient in Python, SQL, and data visualization tools like Tableau. Seeking to leverage analytical skills to derive meaningful business insights from complex datasets.
+
+Professional Experience
+Data Analyst | Data Insights Corp. | Mumbai, India
+July 2021 - Present
+
+Write complex SQL queries to extract and manipulate data from large relational databases.
+
+Develop automated reports and interactive dashboards using Python (Pandas, Matplotlib) and Tableau.
+
+Perform statistical analysis to identify trends and patterns in customer behavior data.
+
+Education
+M.Sc. in Statistics | University of Mumbai
+2019 - 2021
+
+Skills
+
+Technical Skills: Python (Pandas, NumPy), SQL, R, Tableau, Microsoft Excel
+
+Databases: MySQL, SQL Server
+
+Other: Statistical Analysis, Data Visualization, Git

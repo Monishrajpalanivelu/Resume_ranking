@@ -1,0 +1,23 @@
+RAHUL KUMAR
+Email: rahulkumar@email.com
+
+Work History
+Software Developer at a small IT company (2022-Present).
+I worked on a web application. I used Java for the backend part and React for the front end. I fixed bugs and added new features.
+
+Education
+B.Tech from a local engineering college.
+
+Skills Section
+
+Java
+
+Spring Boot
+
+React
+
+MySql
+
+Git
+
+Problem Solving
