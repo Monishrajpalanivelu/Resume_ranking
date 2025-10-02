@@ -1,49 +1,53 @@
 from sentence_model import model
 from sentence_transformers import util
-
-import docx2txt, PyPDF2
-
+import PyPDF2
 from PyPDF2 import PdfReader
 from io import BytesIO
+import re
 
 def extract_text(file):
     if file.filename.endswith(".pdf"):
-        # read PDF from the in-memory file object
-        file_stream = BytesIO(file.read())  # convert uploaded file to a BytesIO stream
+        file_stream = BytesIO(file.read())
         reader = PdfReader(file_stream)
         text = ""
         for page in reader.pages:
             text += page.extract_text() or ""
         return text.strip() if text else None
     else:
-        # handle txt / docx files
         return file.read().decode("utf-8", errors="ignore").strip()
-from sentence_transformers import util
 
-from sentence_transformers import util
-import re
-
-def extract_keywords(text, top_n=10):
+# --- NEW FUNCTION: Scan resume for skills from a master list ---
+def find_skills_in_resume(resume_text):
     """
-    Extract the top N keywords from a text.
-    Simple approach: take unique words longer than 3 letters.
+    Scans the resume text to find which skills from a predefined
+    master list are present.
     """
-    words = re.findall(r'\b\w{6,}\b', text.lower())
-    freq = {}
-    for w in words:
-        freq[w] = freq.get(w, 0) + 1
-    sorted_words = sorted(freq.items(), key=lambda x: x[1], reverse=True)
-    return [w for w, _ in sorted_words[:top_n]]
+    # This is your master list of keywords. You can expand it with any
+    # skills you want to track.
+    master_skill_list = [
+        'java', 'spring boot', 'react', 'react.js', 'javascript', 'sql', 'mysql',
+        'postgresql', 'docker', 'git', 'rest api', 'microservices', 'python',
+        'aws', 'azure', 'gcp', 'html', 'css', 'django', 'node.js', 'redis',
+        'hibernate', 'maven', 'jenkins', 'postman', 'oop', 'dbms'
+    ]
 
+    found_skills = []
+    # Loop through the master list to see which skills are in the resume
+    for skill in master_skill_list:
+        # re.search() looks for a match anywhere in the text.
+        # r'\b' ensures we match whole words only (e.g., 'api' not 'captain').
+        # re.IGNORECASE makes the search case-insensitive ('Java' and 'java' match).
+        if re.search(r'\b' + re.escape(skill) + r'\b', resume_text, re.IGNORECASE):
+            found_skills.append(skill)
+            
+    return found_skills
+
+# --- UPDATED MAIN FUNCTION ---
 def match_resumes(job_description, resumes, top_n_results=3):
     if not job_description or job_description.strip() == "":
         raise ValueError("Job description is empty or missing")
 
-    print("Job Description:", job_description[:100])  # debug first 100 chars
-
-    # Encode job description
     jd_embedding = model.encode(job_description, convert_to_tensor=True)
-    jd_keywords = extract_keywords(job_description, top_n=100)
     results = []
 
     for file in resumes:
@@ -55,20 +59,14 @@ def match_resumes(job_description, resumes, top_n_results=3):
         resume_embedding = model.encode(resume_text, convert_to_tensor=True)
         score = util.cos_sim(jd_embedding, resume_embedding).item()
 
-        # Extract keywords from resume that also appear in JD
-        resume_keywords = extract_keywords(resume_text, top_n=20)
-        matching_keywords = list(set(jd_keywords) & set(resume_keywords))
+        # <-- UPDATED: Call our new function to get skills from the predefined list
+        matching_keywords = find_skills_in_resume(resume_text)
 
         results.append({
             "filename": file.filename,
-            "score": round(score, 3),
+            "score": round(score, 4),
             "matching_keywords": matching_keywords
         })
 
-    # Sort by score descending
     results.sort(key=lambda x: x["score"], reverse=True)
-
-    # Return only top N results
     return results[:top_n_results]
-
-
