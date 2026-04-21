@@ -74,6 +74,7 @@ pip install -r requirements.txt
 
 ---
 
+
 ## **Run the Application Locally**
 
 ```bash
@@ -85,4 +86,10 @@ python backend/app.py
 * Open in your browser.
 
 ---
+## 📌 Usage
 
+1. Upload your resume
+2. System analyzes and ranks the resume
+3. View score and feedback
+
+This helps users understand how the system evaluates resumes.
