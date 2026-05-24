@@ -86,7 +86,7 @@ python backend/app.py
 * Open in your browser.
 
 ---
-## 📌 Usage
+## 📌 **Usage**
 
 1. Upload your resume
 2. System analyzes and ranks the resume
